@@ -1,0 +1,96 @@
+
+
+### sds 3000
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2RzIiwiaWF0IjoxNjUzMjAyNjcwfQ.dQaEyd6JKPUaZ2ep_ItyudHjsv6EjkoUB1M68aaQgxA
+
+### cns 3000
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiY25zIiwiaWF0IjoxNjUzMjE0NTYzLCJleHAiOjE2NTMyMTQ1Nzh9._17tPImaHWXOd29zmaJhKtA7yqNn2WNYL-fDPHzhp9Y
+
+
+### sds 4000
+GET http://localhost:4000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2RzIiwiaWF0IjoxNjUzMjAyNjcwfQ.dQaEyd6JKPUaZ2ep_ItyudHjsv6EjkoUB1M68aaQgxA
+
+### cns 4000
+GET http://localhost:4000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiY25zIiwiaWF0IjoxNjUzMjAzMDA1fQ.dYhbMDYnjrX4ftK5H5zgBJH4WinlLx3toaO3zgbf77U
+
+
+
+### cns 3000
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username":"cns"
+}
+
+
+
+### sds 3000
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username":"sds"
+}
+
+
+### sangbin 3000
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username":"sangbin"
+}
+
+### sangbin
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2FuZ2JpbiIsImlhdCI6MTY1MzIwMzQ0NX0.lxC0SO__5r6b4DctEsqF8-1r7y1Qjxbz9GF-vomEbFY
+
+
+########## refresh Token : port : 5000
+########## refresh Token : port : 5000
+########## refresh Token : port : 5000
+########## refresh Token : port : 5000
+########## refresh Token : port : 5000
+########## refresh Token : port : 5000
+########## refresh Token : port : 5000
+########## refresh Token : port : 5000
+
+
+
+### cns 3000
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiY25zIiwiaWF0IjoxNjUzMjE0OTc2LCJleHAiOjE2NTMyMTQ5OTF9.J5WZmWBidqvYYEVqg_S3Yy0gvroRCFxrHHPoCFU2pe8
+
+
+ 
+### refreshToken 으로 
+
+POST http://localhost:5000/token
+Content-Type: application/json
+
+{
+     "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiY25zIiwiaWF0IjoxNjUzMjE2MDMzfQ.Wjfw8EpLBF0dWatTAlqfFXAjuwbhqAIe8wqLL3jnKSs"
+}
+
+### 사용한 refreshToken 값으로 refreshTokens 에 들어있는 동일한 refreshToken 값 제거
+DELETE http://localhost:5000/logout
+Content-Type: application/json
+
+{
+    "token" :"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiY25zIiwiaWF0IjoxNjUzMjE2MDMzfQ.Wjfw8EpLBF0dWatTAlqfFXAjuwbhqAIe8wqLL3jnKSs"
+}
+
+
+
+### cns 5000 : username 으로 accessToken, refreshToken 생성
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "username":"cns"
+}
